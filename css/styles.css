@@ -705,20 +705,33 @@ body {
 
 /*---------------portfolio-example---------------*/
 
-.overlay-gallery {
-  display: inline-block;
-  /* content: ""; */
-  width: 100%;
-  height: 294px;
+.portfolio-hidden {
+  overflow: hidden;
+  position: relative;
+}
 
+.overlay-gallery {
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 
-  position: absolute;
   background-color: rgba(33, 150, 243, 0.9);
 
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-hidden:hover,
+.portfolio-hidden:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-hidden:hover .overlay-gallery,
+.portfolio-hidden:focus .overlay-gallery {
+  transform: translateY(0%);
 }
 
 .text-overlay-gallery {
@@ -748,21 +761,6 @@ body {
   flex-basis: calc(100% / 3 - 30px);
   margin-right: 30px;
   margin-bottom: 30px;
-
-  position: relative;
-
-  overflow: hidden;
-}
-
-.example-item:hover,
-.example-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.example-item:hover .overlay-gallery,
-.example-item:focus .overlay-gallery {
-  transform: translateY(0%);
 }
 
 .border {
